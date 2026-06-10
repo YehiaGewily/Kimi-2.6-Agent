@@ -27,7 +27,7 @@ A full AI agent for coding, studying, and summarising using the **Kimi 2.6** mod
 Run:
 
 ```bash
-python /home/runner/work/Kimi-2.6-Agent/Kimi-2.6-Agent/YehiaGewily/Kimi-2.6-Agent/kimi_agent.py \
+python kimi_agent.py \
   --mode coding \
   --prompt "Review this Python function for bugs."
 ```

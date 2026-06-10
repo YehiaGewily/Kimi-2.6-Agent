@@ -60,7 +60,7 @@ class KimiAgent:
             ],
         }
 
-        auth_scheme = "Be" + "arer"
+        auth_scheme = "Bearer"
 
         request = urllib.request.Request(
             url=f"{self.base_url}/chat/completions",
@@ -119,7 +119,11 @@ def main(argv: list[str]) -> int:
             max_tokens=args.max_tokens,
         )
     except Exception as exc:  # pragma: no cover
-        print(f"Error: {exc}", file=sys.stderr)
+        prompt_preview = " ".join(args.prompt.split())[:80]
+        print(
+            f"Error while running mode '{args.mode}' with prompt '{prompt_preview}': {exc}",
+            file=sys.stderr,
+        )
         return 1
 
     print(result)
